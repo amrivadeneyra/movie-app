@@ -9,15 +9,18 @@ h1{
     width: max-content;
     margin-left: auto;
     margin-right: auto;
+    
 }
 #container{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    background-position:center;
 }
 #container div{
     flex: 2;
     display: grid;
+    grid-template-columns: ;
     justify-items: center;
     margin: 15px;
     padding: 13px;

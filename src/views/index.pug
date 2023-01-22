@@ -4,6 +4,156 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style.
+            *{
+                scroll-behavior: smooth;
+            }
+            body{
+                margin: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: #191919;
+                color: #fff;
+                box-sizing:border-box;
+                
+            }
+            header{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: end;
+                align-items: center;
+                z-index: 10000;
+            }
+            header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100px;
+                background: linear-gradient(to bottom, #191919f1, transparent);
+                z-index:-1;
+            }
+            header a{
+                cursor:pointer;
+                font-size: 40px;
+                margin:20px 30px;
+                color: crimson;
+            }
+            section.home{
+                background-image: url("https://c4.wallpaperflare.com/wallpaper/915/349/257/joker-smile-wallpaper-preview.jpg");
+                background-size: cover;
+                background-position: top;
+            }
+            section .wrapper{
+                height:100vh;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            section .container-home{
+                grid-column:2;
+                align-self: center;
+                max-width:45vw;
+                height:70vh;
+            }
+
+            section .container-home h2{
+                margin:0;
+                position:relative;
+                font-size:7vw;
+            }
+
+            section .container-home p{
+                font-size:1.3vw;
+                margin:50px 0;
+            }
+
+            section .container-home a{
+                padding:10px 30px;
+                text-decoration:none;
+                font-size:2rem;
+                border: 2px solid #fff;
+                border-radius:20px;
+                color:#fff;
+                transition: all 1s ease;
+            }
+            section .container-home a:hover{
+                background-color:  crimson;
+            }
+
+            section::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100px;
+                background: linear-gradient(to top, #191919, transparent);
+            }
+
+            #category{
+                margin-left: 50px;
+            }
+
+            #container{
+                width: 100%;
+                max-width:95%;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 50px;
+            }
+           
+            #container div{
+                flex: 2;
+                display: grid;
+                justify-items: center;
+                margin: 25px;
+                padding: 20px;
+                border-radius: 15px;
+                background-color: #2020205d;
+            }
+            #container div img{
+                box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
+                max-width: 300px;
+                height: 450px;
+                border-radius: 15px;
+                transition: transform .5s ease;
+                margin-top:12px;
+            }
+            #container div img:hover{
+                transform: scale(1.03);
+            }
+            #container div button{
+                font-size: 20px;
+                border: 1px solid ;
+                border-radius: 40%;
+                background-color: transparent;
+            }
         title Document
     body
-    h1= title
+    header
+        a Movie App
+    main
+        section.home
+            .wrapper
+                .container-home
+                    h2 Joker
+                    p Arthur Fleck (Phoenix) lives in Gotham with his mother, and his only motivation in life is to make people laugh. He acts as a clown in small jobs, but he has mental problems that make people see him as a freak. His great dream is to act as a comedian in front of the public, but a series of tragic events will make him increase his anger against a society that ignores him.
+                    a(href="#category")  Movies
+        #category
+            h1 Movies
+        #container
+            each movie in movies
+                div
+                    img(src=movie.img, alt=movie.name)
+                    h2 #{movie.name}
+                    small  Duration: #{movie.duration} min.
+                    small Country: #{movie.country}
+                    small Direction: #{movie.direction}
+                    small Gender: #{movie.gender}
+                    small Year: #{movie.year}
+                    p Description:
+                    button i
+
+

@@ -1,4 +1,12 @@
 {
+  "name": "webmovie",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app",
+    "dev" : "nodemon src/app"
+  },
+
+
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^6.8.4",

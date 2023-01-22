@@ -1,12 +1,25 @@
-const controller = {}
-const connection = require('../utils/db');
+const controller = {};
+const connection = require('../utils/connection');
+const MovieModel = require('../models/movie.model');
 
 controller.index = async (req, res) => {
     try{
-        const title = 'holaaaaa'
         await connection();
-        console.log('conectando a mongo...')
-        res.render('index',{title});
+        const allMovies = await MovieModel.find()
+        //const year =`Direction: ${allMovies.year}`
+        const movies = allMovies.map(element => {
+            return{
+                img: element.imgUrl,
+                name: element.name,
+                duration: element.duration,
+                country: element.country,
+                direction: element.direction,
+                gender: element.gender,
+                year: element.year
+            }
+        });
+        console.log(movies)
+        res.render("index",{movies});
     } catch(err){
         console.error(err);
     }
