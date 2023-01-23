@@ -4,17 +4,22 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet", integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC", crossorigin="anonymous")
         style.
+            @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
             *{
+                margin:0;
+                padding:0;
                 scroll-behavior: smooth;
+                color:#000;
             }
             body{
-                margin: 0;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-family: 'Poppins', sans-serif;
                 background-color: #191919;
                 color: #fff;
                 box-sizing:border-box;
-                
             }
             header{
                 position: absolute;
@@ -39,13 +44,15 @@ html(lang="en")
             header a{
                 cursor:pointer;
                 font-size: 40px;
+                font-weight:700 ;
                 margin:20px 30px;
-                color: crimson;
+                color: crimson !important;
             }
             section.home{
                 background-image: url("https://c4.wallpaperflare.com/wallpaper/915/349/257/joker-smile-wallpaper-preview.jpg");
                 background-size: cover;
                 background-position: top;
+                background-attachment: fixed;
             }
             section .wrapper{
                 height:100vh;
@@ -62,18 +69,19 @@ html(lang="en")
             section .container-home h2{
                 margin:0;
                 position:relative;
-                font-size:7vw;
+                font-size:6rem;
             }
 
             section .container-home p{
-                font-size:1.3vw;
+                font-size:1.1rem;
                 margin:50px 0;
+                color:#fff;
             }
 
             section .container-home a{
                 padding:10px 30px;
                 text-decoration:none;
-                font-size:2rem;
+                font-size:1.4rem;
                 border: 2px solid #fff;
                 border-radius:20px;
                 color:#fff;
@@ -92,26 +100,30 @@ html(lang="en")
                 background: linear-gradient(to top, #191919, transparent);
             }
 
-            #category{
-                margin-left: 50px;
+            #cate{
+                margin:50px 0 0 50px;
+                font-size:2rem;
+            }
+            #cate h1{
+                margin:0;
+                color: #fff;
             }
 
             #container{
-                width: 100%;
                 max-width:95%;
                 display: flex;
                 flex-wrap: wrap;
                 margin: 0 50px;
             }
-           
             #container div{
                 flex: 2;
                 display: grid;
+                grid-template-columns:1fr;
                 justify-items: center;
                 margin: 25px;
                 padding: 20px;
                 border-radius: 15px;
-                background-color: #2020205d;
+                background-color: #2f2f2f5d;
             }
             #container div img{
                 box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
@@ -124,36 +136,172 @@ html(lang="en")
             #container div img:hover{
                 transform: scale(1.03);
             }
-            #container div button{
-                font-size: 20px;
-                border: 1px solid ;
-                border-radius: 40%;
-                background-color: transparent;
+            div h2{
+                color: #ffffed;
+                margin:25px 0 15px;
             }
-        title Document
+            #container div .id{
+                display: none;
+            }
+
+            #container div .btn{
+                display: flex;
+                background-color: transparent;
+                margin: 10px;
+                padding: 10px;
+            }
+
+            #container div a {
+                display:grid;
+                align-items: center;
+                justify-items: center;
+                width:70px;
+                height:70px;
+                margin:10px;
+                background-color: #fffadd;
+                cursor:pointer;
+                border-radius:10px;
+                text-decoration:none;
+                transition: transform .5s ease;
+            }
+            #container div a span{
+                font-size:35px !important;
+                color:#000;
+            }
+             #container div a:hover{
+                transform: scale(1.3);
+             }
+            #container div a:nth-child(2) {
+                background-color:#8B0C3C;
+            }
+            #container div .article{
+                width: 100%;
+                display:flex;
+                flex-wrap:wrap;
+                align-content: center;
+                margin:10px;
+                padding:10px;
+            }
+            #container div .article .small{
+                color: #f7e5a0;
+                font-size: 15px;
+                padding:5px 20px 5px 5px;
+            }
+            .min{
+                color: #f7e5a0;
+                padding-left:5px;
+            }
+            #container div .article .span{
+                color: #ffffed;
+                font-size: 15px;
+                padding-left:10px;
+            }
+
+        title Movie App
     body
-    header
-        a Movie App
-    main
-        section.home
-            .wrapper
-                .container-home
-                    h2 Joker
-                    p Arthur Fleck (Phoenix) lives in Gotham with his mother, and his only motivation in life is to make people laugh. He acts as a clown in small jobs, but he has mental problems that make people see him as a freak. His great dream is to act as a comedian in front of the public, but a series of tragic events will make him increase his anger against a society that ignores him.
-                    a(href="#category")  Movies
-        #category
-            h1 Movies
-        #container
-            each movie in movies
-                div
-                    img(src=movie.img, alt=movie.name)
-                    h2 #{movie.name}
-                    small  Duration: #{movie.duration} min.
-                    small Country: #{movie.country}
-                    small Direction: #{movie.direction}
-                    small Gender: #{movie.gender}
-                    small Year: #{movie.year}
-                    p Description:
-                    button i
+        header
+            a Movie App
+        main
+            section.home
+                .wrapper
+                    .container-home
+                        h2 Joker
+                        p Arthur Fleck (Phoenix) lives in Gotham with his mother, and his only motivation in life is to make people laugh. He acts as a clown in small jobs, but he has mental problems that make people see him as a freak. His great dream is to act as a comedian in front of the public, but a series of tragic events will make him increase his anger against a society that ignores him.
+                        a(href="#cate")  Movies
+            #cate
+                h1 Movies
+            #container
+                each movie in movies
+                    div
+                        img(src=movie.img, alt=movie.name)
+                        h2 #{movie.name}
+                        small.id ID: #{movie._id}
+                        .article
+                            small.small Duration:
+                                span.span #{movie.duration}
+                                span.min min.
+                            small.small Country:
+                                span.span #{movie.country}
+                        .article
+                            small.small Direction:
+                                span.span #{movie.direction}
+                        .article
+                            small.small Gender:
+                                span.span #{movie.gender}
+                            small.small Year:
+                                span.span #{movie.year}
+                        .article
+                            p.small Distribution:
+                                span.span #{movie.distri}
+                        .article
+                            p.small Description:
+                                span.span #{movie.description}
+                        .btn
+                            a.btnEdit(type='button',data-toggle="modal", data-target="modalMovie", data-id=movie._id, data-name=movie.name, data-duration=movie.duration, data-country=movie.country, data-direction=movie.direction, data-gender=movie.gender, data-year=movie.year, data-distri=movie.distri, data-description=movie.description)
+                                span.material-symbols-outlined edit
+                            a(href="/delete/#{movie._id}")
+                                span.material-symbols-outlined delete
+
+        //- modal
+        .modal.fade(id='modalMovie', tabindex='-1', role='dialog', aria-labelledby='modalMovie', aria-hidden='true')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        h5.modal-title#exampleModalLabel Edit Información
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') &times;
+                    .modal-body
+                        form(action='/edit', method='POST')
+                            input(name="id_edit", type='text', id='id_edit' hidden)
+                            .form-group
+                                label.col-form-label(for='edit_name') Title:
+                                input.form-control(type='text', id='edit_name',name='edit_name')
+                            .form-group
+                                label.col-form-label(for='edit_duration') Duration (mts.):
+                                input.form-control(type='number', id='edit_duration',name='edit_duration')
+                            .form-group
+                                label.col-form-label(for='edit_country') Country:
+                                input.form-control(type='text', id='edit_country')
+                            .form-group
+                                label.col-form-label(for='edit_direction') Direction:
+                                input.form-control(type='text', id='edit_direction')
+                            .form-group
+                                label.col-form-label(for='edit_gender') Gender:
+                                input.form-control(type='text', id='edit_gender')
+                            .form-group
+                                label.col-form-label(for='edit_year') Year:
+                                input.form-control(type='number', id='edit_year', name='edit_year')
+                            .form-group
+                                label.col-form-label(for='edit_distri') Distribution:
+                                textarea.form-control(id='edit_distri')
+                            .form-group
+                                label.col-form-label(for='edit_description') Description:
+                                textarea.form-control(id='edit_description')
+                            .modal-footer
+                                button.btn.btn-primary(type='submit', data-dismiss='modal') Update
 
 
+    script.
+        const modalMovie = document.getElementById('modalMovie')
+        const on = (element, event , selector, handler) => {
+            element.addEventListener(event, e => {
+                if(e.target.closest(selector)){
+                    handler(e)
+                }
+            })
+        }
+        on(document, 'click', '.btnEdit',e => {
+            id_edit.value = e.target.dataset._id;
+            edit_name.value = e.target.dataset.name;
+            edit_duration.value = e.target.dataset.duration;
+            edit_country.value = e.target.dataset.country;
+            edit_direction.value = e.target.dataset.direction;
+            edit_gender.value = e.target.dataset.gender;
+            edit_year.value = e.target.dataset.year;
+            edit_distri.value = e.target.dataset.distri;
+            edit_description.value = e.target.dataset.description;
+            $("#modalMovie").modal("show");
+        })
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js", integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM", crossorigin="anonymous")      
+    script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js", integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n", crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js", integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", crossorigin="anonymous")

@@ -1,18 +1,20 @@
 const mongoose = require('MONGOOSE');
-const { object } = require('webidl-conversions');
 const { Schema } = mongoose
 
 //recibe como parametro un objeto que será nuestra estructura de datos
 const MovieSchema = new Schema({
-    imgUrl:String,
+    _id: Object,
     name: String,
-    duration: String,
+    duration: Number,
     country: String,
     direction: String,
     gender: String,
-    year: String
-    
-});
+    year: Number,
+    distribution:String,
+    description:String,
+    imgUrl:String
+}, {versionKey:false} )
+
 
 const MovieModel = mongoose.model('movies', MovieSchema );
 
